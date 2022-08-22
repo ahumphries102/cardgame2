@@ -1,21 +1,8 @@
-import React, { useState, useEffect } from "react"
-import { io } from "socket.io-client"
-const socket = io("http://localhost:5000")
-
-function App() {
-  const [test, setTest] = useState(1)
-
-  useEffect(() => {
-    socket.emit("playerJoined")
-    socket.on('increasePlayerCount', (msg) => {
-      setTest(msg)
-    })
-  }, [])
+import StartScreen from './views/startscreen'
+export default function App() {
   return (
     <>
-      <div style={{ background: test < 2 ? "red" : "blue" }}>hi</div>
+      <StartScreen/>
     </>
   )
 }
-
-export default App
