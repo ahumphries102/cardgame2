@@ -17,7 +17,7 @@ let playersJoined = 0
 
 io.on("connection", (socket) => {
   /* socket object may be used to send specific messages to the new connected client */
-  console.log("new client connected")
+  console.log("new client connected", playersJoined)
   socket.emit("connection", null)
   socket.on('playerJoined', (msg) => {
     playersJoined++

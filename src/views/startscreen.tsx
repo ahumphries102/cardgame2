@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, CSSProperties } from "react"
 import { io } from "socket.io-client"
 import { Grid } from "@mui/material"
+import { Link } from "react-router-dom";
 
 import Box from "@mui/material/Box"
 const socket = io("http://localhost:5000")
 
-const startScreenStyle = {
+const startScreenStyle: CSSProperties = {
   backgroundColor: "pink",
   textAlign: "center",
   listStyle: "none",
@@ -30,7 +31,9 @@ export default function StartScreen() {
           <Grid item xs={12}>
             <ul style={startScreenStyle}>
               <li>
-                <button>Start</button>
+                <Link to="/taco">
+                  <button>Start</button>
+                </Link>
               </li>
               <li>
                 <button>Credits</button>
